@@ -1,0 +1,32 @@
+R version 3.6.3 (2020-02-29)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18362)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] RColorBrewer_1.1-2  tidyr_1.1.0         bsts_0.9.5         
+ [4] xts_0.12-0          zoo_1.8-8           BoomSpikeSlab_1.2.3
+ [7] Boom_0.9.6          MASS_7.3-51.5       ggplot2_3.3.2      
+[10] lubridate_1.7.9     feasts_0.1.5        fabletools_0.2.1   
+[13] tsibble_0.9.2       readr_1.3.1         dplyr_1.0.0        
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5           pillar_1.4.6         compiler_3.6.3      
+ [4] tools_3.6.3          lifecycle_0.2.0      tibble_3.0.3        
+ [7] gtable_0.3.0         anytime_0.3.9        lattice_0.20-38     
+[10] pkgconfig_2.0.3      rlang_0.4.6          rstudioapi_0.11     
+[13] withr_2.2.0          generics_0.0.2       vctrs_0.3.1         
+[16] hms_0.5.3            grid_3.6.3           tidyselect_1.1.0    
+[19] glue_1.4.1           R6_2.4.1             distributional_0.2.0
+[22] farver_2.0.3         purrr_0.3.4          magrittr_1.5        
+[25] scales_1.1.1         ellipsis_0.3.1       colorspace_1.4-1    
+[28] munsell_0.5.0        crayon_1.3.4
