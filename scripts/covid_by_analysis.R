@@ -120,9 +120,9 @@ sapply(list("m0" = (predict(m0, horizon = 6) %>% .$median)*10000,
 y_full <- c(y, valid$y)
 
 ss <- list()
-ss <- AddLocalLinearTrend(ss, y)
-ss <- AddSeasonal(ss, y, nseasons = 12)
-ss <- AddAutoAr(ss, y, lag = 3)
+ss <- AddLocalLinearTrend(ss, y_full)
+ss <- AddSeasonal(ss, y_full, nseasons = 12)
+ss <- AddAutoAr(ss, y_full, lag = 3)
 m_final <- bsts(y_full, ss,
                 niter = 2000, ping = 0, seed = 42)
 
@@ -222,8 +222,8 @@ result_rel <- excess_mortality_rel %>%
     ul95 = quantile(value, p = 0.975)
   )) %>% 
   mutate(month = factor(month, ordered = TRUE,
-                levels = c("apr", "may", "jun", "total"),
-                labels = c("апрель", "май", "июнь", "всего"))) %>% 
+                        levels = c("apr", "may", "jun", "total"),
+                        labels = c("апрель", "май", "июнь", "всего"))) %>% 
   arrange(month)
 
 # Рис. 9:
@@ -232,7 +232,7 @@ result_rel %>%
   ggplot(., aes(month, med)) +
   geom_point(size = 4) +
   geom_hline(aes(yintercept = 0), linetype = 2, col = "gray60") +
-  geom_errorbar(aes(ymin = ll95, ymax = ul95), width = 0.2) +
+  geom_errorbar(aes(ymin = ll95, ymax = ul95), width = 0.15) +
   theme_minimal() +
   labs(x = "Месяц 2020 г.", y = "Удельный рост смертности (%)")
 
@@ -243,10 +243,10 @@ result_rel %>%
 population <- 9449323
 
 # Наиболее вероятный прирост:
-(6737 * 100000) / population
+(6731 * 100000) / population
 
 # Оптимистичная оценка:
-(4135 * 100000) / population
+(4189 * 100000) / population
 
 # Оптимистичная оценка:
-(9341 * 100000) / population
+(9335 * 100000) / population
